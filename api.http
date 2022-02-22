@@ -1,15 +1,19 @@
 # Get Goals 
 GET  http://localhost:5000/api/goals HTTP/1.1
 Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTNhODRhN2VhMmI2OGY1OTU3YWFlNSIsImlhdCI6MTY0NTQ1NzQwMywiZXhwIjoxNjQ4MDQ5NDAzfQ.MS_GLskw-qFu9BoNfvX-0_UKMJccmDvDyL7s8U_OQPE
+
 
 ###
 
 # Post Goal
 POST http://localhost:5000/api/goals HTTP/1.1
 Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTNhODRhN2VhMmI2OGY1OTU3YWFlNSIsImlhdCI6MTY0NTQ1NzQwMywiZXhwIjoxNjQ4MDQ5NDAzfQ.MS_GLskw-qFu9BoNfvX-0_UKMJccmDvDyL7s8U_OQPE
+
 
 {
-  "text": "test 2"
+  "text": "authenticated goal"
 }
 
 ###
@@ -25,7 +29,35 @@ Content-Type: application/json
 ###
 
 # Delete Goal
-DELETE http://localhost:5000/api/goals/6213940f28f72f7e6da440cc HTTP/1.1
+DELETE http://localhost:5000/api/goals/6213b21bbbd4298ad20c6329 HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTNhODRhN2VhMmI2OGY1OTU3YWFlNSIsImlhdCI6MTY0NTQ1NzQwMywiZXhwIjoxNjQ4MDQ5NDAzfQ.MS_GLskw-qFu9BoNfvX-0_UKMJccmDvDyL7s8U_OQPE
 
 ###
+
+# Register User
+POST http://localhost:5000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "test",
+  "email": "test3@gmail.com",
+  "password": "test"
+}
+
+###
+
+# Authenticate User
+POST http://localhost:5000/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "test"
+}
+
+###
+
+# Get My User Data
+GET http://localhost:5000/api/users/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTNhODRhN2VhMmI2OGY1OTU3YWFlNSIsImlhdCI6MTY0NTQ1NzQwMywiZXhwIjoxNjQ4MDQ5NDAzfQ.MS_GLskw-qFu9BoNfvX-0_UKMJccmDvDyL7s8U_OQPE
